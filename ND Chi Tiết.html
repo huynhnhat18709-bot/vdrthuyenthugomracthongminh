@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#354536">
+<meta name="description" content="VDR – Tàu vớt rác thông minh sử dụng năng lượng mặt trời. Ý tưởng thiết kế, cấu tạo, nguyên lý hoạt động và định hướng ứng dụng.">
+<title>VDR – Tàu vớt rác thông minh sử dụng năng lượng mặt trời</title>
+<style>
+:root{--forest:#354536;--forest2:#26372b;--moss:#58764f;--yellow:#f1df58;--cream:#f5f1e9;--ink:#263128;--muted:#687268;--line:#e4e5dc;--white:#fff;--shadow:0 18px 50px #20332512}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;color:var(--ink);font:clamp(16px,1.05vw + 12px,18px)/1.78 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",Arial,sans-serif;background:#fff;font-weight:400;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}a{color:inherit}img{max-width:100%;display:block}.container{width:min(1160px,calc(100% - 40px));margin:auto}
+.topbar{background:var(--forest);color:#fff;font-size:.82rem}.topbar .container{display:flex;justify-content:space-between;gap:16px;padding:9px 0}.topbar a{color:var(--yellow);text-decoration:none}
+header{position:sticky;top:0;z-index:20;background:#fffefaee;backdrop-filter:blur(14px);border-bottom:1px solid #e9e8df}
+.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:900;letter-spacing:.06em;color:var(--forest)}.brand-mark{width:42px;height:42px;border-radius:50%;background:var(--yellow);display:grid;place-items:center;color:var(--forest);font-weight:900;font-size:1.2rem}.brand small{display:block;font-size:.66rem;letter-spacing:.16em;color:var(--muted);font-weight:700}.navlinks{display:flex;gap:20px;align-items:center;font-size:.86rem}.navlinks a{text-decoration:none;color:#526052}.navlinks a:hover{color:#111}.navtoggle{display:none;background:var(--forest);color:white;border:0;border-radius:10px;padding:9px 12px}
+.hero{position:relative;min-height:590px;display:grid;align-items:center;color:white;background:linear-gradient(90deg,#26372be8 0%,#26372bc9 48%,#26372b36 100%),url('https://mtcs.1cdn.vn/2025/10/15/o-nhiem.jpg') center/cover}
+.hero:after{content:"";position:absolute;inset:auto 0 0;height:12px;background:var(--yellow)}.hero-content{position:relative;z-index:1;padding:90px 0;max-width:790px}.eyebrow{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--moss);font-weight:800}.hero .eyebrow{color:var(--yellow)}h1,h2,h3{line-height:1.15;margin:0 0 18px;color:var(--forest)}h1{font-size:clamp(2.25rem,5.2vw,4.6rem);line-height:1.12;letter-spacing:-.025em;color:#fff;max-width:850px}h2{font-size:clamp(1.75rem,3.5vw,2.65rem);line-height:1.2;letter-spacing:-.025em}h3{font-size:clamp(1.08rem,1.2vw,1.28rem);line-height:1.35}p{margin:0 0 14px}.hero p{max-width:690px;color:#f3f3eb;font-size:1.08rem}.btn{display:inline-flex;align-items:center;gap:10px;background:var(--yellow);color:var(--forest);padding:13px 20px;border-radius:4px;text-decoration:none;font-weight:800;margin-top:15px}.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px #0002}
+section{padding:88px 0}.section-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:end;margin-bottom:38px}.section-head p{color:var(--muted);margin:0}.section-kicker{color:var(--moss);font-size:.72rem;letter-spacing:.2em;font-weight:800;text-transform:uppercase;margin-bottom:12px}
+.intro{background:var(--cream)}.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.photo-frame{border-radius:4px;overflow:hidden;min-height:360px;box-shadow:var(--shadow);position:relative}.photo-frame img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}.caption{font-size:.82rem;color:var(--muted);margin-top:9px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.photo-gallery .card{padding:0;overflow:hidden}.photo-gallery img{width:100%;height:220px;object-fit:cover}.photo-gallery h3,.photo-gallery p{margin-left:22px;margin-right:22px}.photo-gallery h3{margin-top:20px}.photo-gallery p{margin-bottom:22px}.card{background:white;border:1px solid var(--line);border-radius:8px;padding:25px;box-shadow:var(--shadow);height:100%}.card .num{width:42px;height:42px;border-radius:50%;background:var(--moss);color:white;display:grid;place-items:center;font-weight:800;margin-bottom:17px}.card p{color:var(--muted);margin-bottom:0}.icon{width:42px;height:42px;color:var(--moss);margin-bottom:16px}
+.dark{background:var(--forest);color:#f7f7ef}.dark h2,.dark h3{color:#fff}.dark .section-kicker{color:var(--yellow)}.dark .section-head p,.dark .card p{color:#d4dbd0}.dark .card{background:#3d4e3e;border-color:#536452;box-shadow:none}.dark .card .num{background:var(--yellow);color:var(--forest)}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}.feature{display:flex;gap:18px;padding:24px;border:1px solid #dfe3d9;border-radius:8px;background:#fff}.feature .icon{flex:0 0 42px}.feature p{color:var(--muted);margin:0}
+.image-band{display:grid;grid-template-columns:1fr 1fr;min-height:350px}.image-band .image{min-height:350px;background:center/cover no-repeat}.image-band .text{padding:60px clamp(25px,6vw,90px);display:flex;flex-direction:column;justify-content:center;background:var(--cream)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;counter-reset:step}.step{padding:22px;border-top:3px solid var(--yellow);background:#ffffff12;counter-increment:step}.step:before{content:"0" counter(step);display:block;color:var(--yellow);font-size:1.5rem;font-weight:900;margin-bottom:12px}.step p{color:#d5ddd3;font-size:.92rem;margin:0}
+.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:#fff}.specs{width:100%;border-collapse:collapse;min-width:520px}.specs th,.specs td{text-align:left;padding:15px 18px;border-bottom:1px solid var(--line)}.specs th{background:var(--forest);color:#fff;font-weight:700}.specs tr:last-child td{border-bottom:0}.specs td:first-child{font-weight:700;color:var(--forest);width:38%}
+details{border:1px solid var(--line);border-radius:8px;background:#fff;margin:12px 0;overflow:hidden}summary{cursor:pointer;list-style:none;padding:20px 24px;font-weight:800;color:var(--forest);display:flex;align-items:center;justify-content:space-between;gap:16px}summary::-webkit-details-marker{display:none}summary:after{content:"+";font-size:1.5rem;color:var(--moss)}details[open] summary:after{content:"−"}details .detail-body{padding:0 24px 22px;color:#59655a}details ul{margin:8px 0;padding-left:22px}
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:12px}.faq details{margin:0}.footer{background:#26372b;color:#e3e9df;padding:50px 0 22px}.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px}.footer h3{color:var(--yellow);font-size:1rem}.footer p,.footer a{color:#cbd4c8;font-size:.9rem}.footer-bottom{border-top:1px solid #ffffff20;margin-top:32px;padding-top:18px;font-size:.78rem;color:#aeb9ae;display:flex;justify-content:space-between;gap:20px}
+.reveal{animation:rise .65s ease both}@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:900px){.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:white;padding:18px 24px 24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.navlinks.open{display:flex}.navtoggle{display:block}.section-head,.intro-grid,.image-band,.footer-grid{grid-template-columns:1fr}.cards{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}.hero{min-height:540px}.image-band .text{padding:45px 25px}}
+@media(max-width:560px){body{font-size:16px;line-height:1.75}h1{font-size:clamp(2.15rem,10vw,3.2rem)}h2{font-size:1.8rem}h3{font-size:1.12rem}.container{width:min(100% - 28px,1160px)}.topbar .container{font-size:.72rem}.brand{font-size:.9rem}.brand-mark{width:36px;height:36px}.hero-content{padding:70px 0}.hero{min-height:560px}.cards,.feature-grid,.steps,.faq{grid-template-columns:1fr}section{padding:62px 0}.section-head{gap:12px;margin-bottom:26px}.photo-frame{min-height:280px}.feature{padding:18px}.footer-bottom{flex-direction:column}.navlinks{top:76px}}
+/* Tăng cỡ tiêu đề phụ để dễ đọc trên desktop và điện thoại */
+h3{font-size:clamp(1.3rem,1.8vw,1.55rem);line-height:1.3}
+.card h3,.step h3,.timeline-item h3{font-size:clamp(1.28rem,1.7vw,1.5rem)}
+summary{font-size:1.12rem;line-height:1.4}
+@media(max-width:560px){h3,.card h3,.step h3,.timeline-item h3{font-size:1.35rem;line-height:1.35}summary{font-size:1.08rem}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><span>VDR · Công nghệ vì môi trường nước</span><span>Thiết kế mô hình · Năng lượng xanh</span></div></div>
+<header><div class="container nav">
+<a class="brand" href="#top"><span class="brand-mark">V</span><span>VDR <small>TÀU VỚT RÁC THÔNG MINH</small></span></a>
+<button class="navtoggle" aria-label="Mở menu" onclick="document.querySelector('.navlinks').classList.toggle('open')">☰</button>
+<nav class="navlinks">
+<a href="#tong-quan">Tổng quan</a><a href="#thiet-ke">Cấu tạo</a><a href="#nang-luong">Năng lượng</a><a href="#van-hanh">Vận hành</a><a href="#thong-so">Thông số</a><a href="#ung-dung">Ứng dụng</a><a href="#hinh-anh">Hình ảnh</a><a href="#faq">FAQ</a>
+</nav></div></header>
+<main id="top">
+<section class="hero"><div class="container hero-content reveal">
+<div class="eyebrow">Dự án khoa học kỹ thuật · Môi trường</div>
+<h1>VDR – Tàu vớt rác thông minh sử dụng năng lượng mặt trời</h1>
+<p>Nội dung dự án tập trung vào ý tưởng, giá trị, phạm vi ứng dụng và định hướng phát triển của mô hình tàu hỗ trợ thu gom rác nổi.</p>
+<a class="btn" href="#tong-quan">Khám phá nội dung <span>↓</span></a>
+</div></section>
+<section class="intro" id="tong-quan"><div class="container intro-grid">
+<div><div class="section-kicker">01 · Tổng quan ý tưởng</div><h2>Thu gom rác nổi, hướng đến nguồn nước sạch hơn</h2>
+<p>VDR là ý tưởng thiết kế một phương tiện nổi hỗ trợ thu gom rác thải trên mặt nước, đặc biệt là rác nổi như chai nhựa, túi nilon, lá cây và các loại rác có kích thước phù hợp với hệ thống thu gom.</p>
+<p>Dự án kết hợp cơ khí, điện tử, lập trình điều khiển và năng lượng tái tạo nhằm tạo ra một mô hình có ý nghĩa thực tiễn trong công tác bảo vệ môi trường nước.</p>
+<p>Điểm nổi bật của ý tưởng là sử dụng năng lượng mặt trời làm nguồn năng lượng hỗ trợ, kết hợp hệ thống hai pin A/B để quản lý việc cấp điện và sạc pin. VDR được định hướng tích hợp điều khiển thông minh, giám sát năng lượng và hỗ trợ thu gom rác.</p>
+<p>VDR không chỉ là mô hình kỹ thuật mà còn là giải pháp nghiên cứu nhằm nâng cao hiệu quả thu gom rác nổi, giảm sức lao động thủ công và khuyến khích ứng dụng công nghệ xanh vào đời sống.</p></div>
+<div><div class="photo-frame"><img src="https://cloudfront-eu-central-1.images.arcpublishing.com/lexpress/4JXO5RSONNGJLGKJ3OZXXEL6WQ.jpg" alt="Hệ thống thu gom rác nổi trên mặt nước" loading="lazy"></div><div class="caption">Minh họa giải pháp thu gom rác nổi trên mặt nước.</div></div>
+</div></section>
+<section><div class="container"><div class="section-head"><div><div class="section-kicker">02 · Vấn đề thực tiễn</div><h2>Lý do lựa chọn đề tài</h2></div><p>Ô nhiễm môi trường nước là vấn đề đáng quan tâm tại nhiều khu dân cư. Rác thải sinh hoạt, đặc biệt là chai nhựa, túi nilon và vật liệu khó phân hủy, thường xuất hiện tại ao hồ, kênh rạch và sông ngòi.</p></div>
+<p>Rác nổi ảnh hưởng đến cảnh quan, gây khó khăn cho công tác quản lý và vệ sinh môi trường. Khi rác phân tán trên diện rộng, thu gom thủ công có thể tốn thời gian, công sức và nhân lực. Từ thực tế đó, nhóm đề xuất nghiên cứu một phương tiện nổi hỗ trợ thu gom rác. Việc sử dụng năng lượng mặt trời và hệ thống điều khiển điện tử tạo cơ hội phát triển mô hình vừa có tính ứng dụng, vừa có giá trị học tập và nghiên cứu khoa học.</p>
+</div></section>
+<section class="dark"><div class="container"><div class="section-head"><div><div class="section-kicker">03 · Mục tiêu</div><h2>Mục tiêu của dự án</h2></div><p>Nghiên cứu, thiết kế và từng bước hoàn thiện mô hình tàu vớt rác sử dụng năng lượng mặt trời, hướng đến hỗ trợ thu gom rác nổi tại các khu vực mặt nước phù hợp.</p></div>
+<div class="cards">
+<article class="card"><div class="num">01</div><h3>Thu gom rác nổi</h3><p>Xây dựng mô hình có khả năng nổi, di chuyển ổn định và đưa rác nổi vào khu vực chứa.</p></article>
+<article class="card"><div class="num">02</div><h3>Quản lý năng lượng</h3><p>Nghiên cứu sử dụng năng lượng mặt trời và phương án quản lý nguồn điện bằng hai pin A/B.</p></article>
+<article class="card"><div class="num">03</div><h3>Điều khiển thông minh</h3><p>Ứng dụng ESP32 trong điều khiển, giám sát và tạo nền tảng cho các chức năng tự động hóa.</p></article>
+<article class="card"><div class="num">04</div><h3>Giá trị cộng đồng</h3><p>Nâng cao nhận thức về bảo vệ môi trường nước và sử dụng năng lượng tái tạo.</p></article>
+</div></div></section>
+<section><div class="container"><div class="section-head"><div><div class="section-kicker">04 · Sáng tạo</div><h2>Điểm nổi bật và giá trị sáng tạo</h2></div><p>VDR được định hướng phát triển dựa trên sự kết hợp của nhiều giải pháp kỹ thuật.</p></div>
+<div class="cards">
+<article class="card"><div class="num">01</div><h3>Thu gom bằng cơ cấu cơ khí</h3><p>Hỗ trợ đưa rác nổi từ mặt nước vào khu vực chứa, giảm thao tác thu gom trực tiếp bằng tay và thuận tiện hơn cho vệ sinh tại mặt nước nhỏ.</p></article>
+<article class="card"><div class="num">02</div><h3>Năng lượng mặt trời</h3><p>Tận dụng nguồn năng lượng tái tạo để hỗ trợ nạp năng lượng cho hệ thống pin, góp phần giảm phụ thuộc vào việc sạc điện thông thường.</p></article>
+<article class="card"><div class="num">03</div><h3>Hai pin A/B</h3><p>Nghiên cứu phương án luân phiên giữa cấp điện và sạc pin, tạo cơ sở cho quản lý năng lượng có tổ chức.</p></article>
+<article class="card"><div class="num">04</div><h3>Điều khiển bằng ESP32</h3><p>Tạo nền tảng tích hợp động cơ, cảm biến, giám sát pin và các chức năng điều khiển trong tương lai.</p></article>
+</div></div></section>
+<section class="dark"><div class="container"><div class="section-head"><div><div class="section-kicker">05 · Lợi ích dự kiến</div><h2>Dự án mang lại những giá trị gì?</h2></div><p>Các lợi ích dưới đây là mục tiêu dự kiến; hiệu quả thực tế cần được đánh giá bằng thử nghiệm và số liệu vận hành.</p></div>
+<div class="cards">
+<article class="card"><h3>Lợi ích môi trường</h3><ul><li>Hỗ trợ thu gom rác nổi tại mặt nước phù hợp.</li><li>Góp phần cải thiện cảnh quan ao hồ, kênh rạch và khu vực công cộng.</li><li>Khuyến khích sử dụng năng lượng tái tạo.</li><li>Nâng cao nhận thức bảo vệ môi trường nước.</li></ul></article>
+<article class="card"><h3>Lợi ích vận hành</h3><ul><li>Có thể hỗ trợ giảm một phần công việc thu gom thủ công.</li><li>Tiếp cận khu vực có rác nổi phân tán.</li><li>Tổ chức quá trình thu gom thông qua cơ cấu cơ khí.</li><li>Tạo nền tảng phát triển giám sát và điều khiển từ xa.</li></ul></article>
+<article class="card"><h3>Lợi ích giáo dục và nghiên cứu</h3><ul><li>Kết hợp cơ khí, điện tử, lập trình và năng lượng tái tạo.</li><li>Thực hành thiết kế, chế tạo và kiểm thử.</li><li>Khuyến khích tư duy giải quyết vấn đề thực tiễn.</li><li>Phù hợp làm mô hình nghiên cứu hoặc giáo dục STEM.</li></ul></article>
+</div></div></section>
+<section><div class="container"><div class="section-head"><div><div class="section-kicker">06 · Đối tượng sử dụng</div><h2>Phạm vi và đối tượng ứng dụng</h2></div><p>Nếu được hoàn thiện và kiểm chứng qua thử nghiệm, VDR có thể hướng đến hỗ trợ các đơn vị và khu vực sau.</p></div>
+<div class="cards">
+<article class="card"><h3>Đơn vị vệ sinh môi trường</h3><p>Hỗ trợ thu gom rác nổi tại các khu vực mặt nước được phân công quản lý.</p></article>
+<article class="card"><h3>Ban quản lý đô thị</h3><p>Hỗ trợ duy trì vệ sinh và cảnh quan tại hồ điều hòa, kênh nội đô và khu vực công cộng.</p></article>
+<article class="card"><h3>Khu du lịch sinh thái</h3><p>Hỗ trợ thu gom rác nổi tại hồ, ao và vùng nước cảnh quan.</p></article>
+<article class="card"><h3>Công viên</h3><p>Hỗ trợ vệ sinh hồ cảnh quan và các khu vực mặt nước nhỏ.</p></article>
+<article class="card"><h3>Đơn vị quản lý ao hồ</h3><p>Hỗ trợ công tác vệ sinh và thu gom rác nổi định kỳ.</p></article>
+<article class="card"><h3>Trường học và cơ sở nghiên cứu</h3><p>Sử dụng mô hình cho học tập, nghiên cứu khoa học và trình diễn công nghệ.</p></article>
+</div><p class="note">Phạm vi ứng dụng ban đầu phù hợp với khu vực nước tương đối yên, có điều kiện vận hành và giám sát an toàn. Triển khai quy mô lớn cần đánh giá thêm độ bền, năng suất thu gom, chi phí và yêu cầu vận hành.</p></div></section>
+<section class="dark"><div class="container"><div class="section-head"><div><div class="section-kicker">07 · Tính khả thi</div><h2>Khả năng ứng dụng trong thực tế</h2></div><p>Ý tưởng có cơ sở ứng dụng vì sử dụng các thành phần kỹ thuật phổ biến như động cơ điện, vi điều khiển, pin, tấm pin mặt trời và cơ cấu thu gom cơ khí.</p></div>
+<div class="timeline">
+<div class="timeline-item"><span>01</span><div><h3>Mô hình thử nghiệm</h3><p>Kiểm tra khả năng nổi, di chuyển và thu gom rác trong môi trường có kiểm soát.</p></div></div>
+<div class="timeline-item"><span>02</span><div><h3>Thử nghiệm tại mặt nước nhỏ</h3><p>Đánh giá hiệu quả thu gom, độ ổn định và khả năng vận hành trong điều kiện thực tế phù hợp.</p></div></div>
+<div class="timeline-item"><span>03</span><div><h3>Hoàn thiện thiết kế</h3><p>Điều chỉnh kích thước, công suất, cơ cấu thu gom và hệ thống điện dựa trên kết quả thử nghiệm.</p></div></div>
+<div class="timeline-item"><span>04</span><div><h3>Đánh giá khả năng triển khai</h3><p>Xem xét chi phí chế tạo, bảo trì, an toàn và nhu cầu sử dụng của đơn vị quản lý.</p></div></div>
+</div></div></section>
+<section><div class="container"><div class="section-head"><div><div class="section-kicker">08 · Định hướng tương lai</div><h2>Hướng cải tiến và phát triển</h2></div><p>Các nội dung dưới đây là định hướng nghiên cứu, không khẳng định đã được triển khai trên mô hình hiện tại.</p></div>
+<div class="cards">
+<article class="card"><h3>Tự động hóa</h3><p>Nghiên cứu chế độ di chuyển tự động dựa trên dữ liệu cảm biến và chương trình điều khiển, nhằm giảm phụ thuộc vào thao tác liên tục của người vận hành.</p></article>
+<article class="card"><h3>AI nhận diện rác</h3><p>Tích hợp camera và thuật toán nhận diện hình ảnh để nghiên cứu phát hiện, phân loại một số loại rác nổi và hỗ trợ xác định khu vực cần thu gom.</p></article>
+<article class="card"><h3>Giám sát từ xa</h3><p>Phát triển giao diện điện thoại hoặc máy tính để theo dõi trạng thái tàu, pin, động cơ và các cảnh báo.</p></article>
+<article class="card"><h3>Tối ưu đường di chuyển</h3><p>Nghiên cứu lộ trình phù hợp dựa trên khu vực hoạt động, dữ liệu cảm biến và vị trí rác được phát hiện.</p></article>
+<article class="card"><h3>Nâng cấp quản lý năng lượng</h3><p>Hoàn thiện giám sát dung lượng, bảo vệ pin và điều kiện chuyển nguồn; nghiên cứu dự đoán nhu cầu năng lượng.</p></article>
+<article class="card"><h3>Quản lý nhiều tàu</h3><p>Nghiên cứu phân chia khu vực và theo dõi trạng thái nhiều phương tiện tại vùng hoạt động rộng hơn.</p></article>
+</div></div></section>
+<section class="dark"><div class="container"><div class="section-head"><div><div class="section-kicker">09 · Lộ trình</div><h2>Các giai đoạn phát triển</h2></div><p>Phát triển theo từng bước giúp kiểm tra và cải tiến dựa trên kết quả thực tế.</p></div>
+<div class="cards">
+<article class="card"><div class="num">01</div><h3>Hoàn thiện mô hình</h3><p>Hoàn thiện thiết kế cơ khí, hệ thống điện, cơ cấu thu gom và chức năng điều khiển cơ bản.</p></article>
+<article class="card"><div class="num">02</div><h3>Thử nghiệm và đánh giá</h3><p>Kiểm tra khả năng nổi, di chuyển, thu gom, quản lý năng lượng và an toàn; ghi nhận dữ liệu.</p></article>
+<article class="card"><div class="num">03</div><h3>Nâng cấp thông minh</h3><p>Nghiên cứu tích hợp cảm biến, camera, AI, điều khiển từ xa và tối ưu đường đi.</p></article>
+<article class="card"><div class="num">04</div><h3>Đánh giá ứng dụng</h3><p>Thử nghiệm trong môi trường phù hợp, đánh giá chi phí, bảo trì và nhu cầu sử dụng.</p></article>
+</div></div></section>
+<section><div class="container"><div class="section-head"><div><div class="section-kicker">10 · Đánh giá</div><h2>Tiêu chí đánh giá hiệu quả</h2></div><p>Các tiêu chí cần được đo đạc trong thử nghiệm. Khi chưa có dữ liệu thực nghiệm, không nên công bố hiệu suất hoặc mức tiết kiệm như kết quả đã đạt được.</p></div>
+<div class="criteria"><span>Khả năng nổi và độ ổn định</span><span>Khả năng di chuyển và điều khiển</span><span>Khối lượng hoặc số lượng rác thu gom theo thời gian</span><span>Tỷ lệ rác được đưa vào và giữ trong thùng</span><span>Thời gian hoạt động mỗi lần sạc</span><span>Hiệu quả sử dụng năng lượng mặt trời</span><span>Độ ổn định hệ thống pin A/B</span><span>An toàn và thuận tiện bảo trì</span><span>Chi phí chế tạo và vận hành</span><span>Mức đáp ứng nhu cầu khu vực ứng dụng</span></div>
+</div></section>
+<section class="photo-gallery" id="hinh-anh" style="background:var(--cream)"><div class="container"><div class="section-head"><div><div class="section-kicker">Hình ảnh thực tế</div><h2>Rác nổi trên sông và hoạt động thu gom</h2></div><p>Hình ảnh minh họa đúng chủ đề VDR: ô nhiễm rác nổi trên mặt nước và các hoạt động, thiết bị hỗ trợ làm sạch sông hồ.</p></div><div class="cards">
+<article class="card"><img src="https://mtcs.1cdn.vn/2025/10/15/o-nhiem.jpg" alt="Rác thải nổi dày trên mặt nước sông tại Việt Nam" loading="lazy" onerror="this.onerror=null;this.src='https://cloudfront-eu-central-1.images.arcpublishing.com/lexpress/4JXO5RSONNGJLGKJ3OZXXEL6WQ.jpg';"><h3>Rác thải nổi trên sông</h3><p>Thực trạng rác nhựa và chất thải nổi gây ảnh hưởng đến cảnh quan, môi trường nước.</p></article>
+<article class="card"><img src="https://cloudfront-eu-central-1.images.arcpublishing.com/lexpress/4JXO5RSONNGJLGKJ3OZXXEL6WQ.jpg" alt="Thuyền và nhân viên thu gom rác nổi trên sông" loading="lazy" onerror="this.onerror=null;this.src='https://www.mix-up.eu/fileadmin/_processed_/9/0/csm_2111_Cleanup_Mission_Slovakia_Ruzin_Dam__14__b2de9c231e.jpg';"><h3>Hoạt động thu gom rác</h3><p>Minh họa công việc đưa rác nổi ra khỏi mặt nước bằng thuyền và dụng cụ thu gom.</p></article>
+<article class="card"><img src="https://www.mix-up.eu/fileadmin/_processed_/9/0/csm_2111_Cleanup_Mission_Slovakia_Ruzin_Dam__14__b2de9c231e.jpg" alt="Tàu chuyên dụng có băng chuyền thu gom rác nổi" loading="lazy" onerror="this.onerror=null;this.src='https://mtcs.1cdn.vn/2025/10/15/o-nhiem.jpg';"><h3>Thiết bị thu gom chuyên dụng</h3><p>Một giải pháp tàu có cơ cấu băng chuyền hỗ trợ đưa rác nổi lên phương tiện.</p></article>
+</div></div></section>
+<section class="closing"><div class="container"><div class="section-kicker">Kết luận</div><h2>Công nghệ xanh, hướng đến môi trường nước sạch hơn</h2><p>VDR là ý tưởng nghiên cứu mô hình tàu hỗ trợ thu gom rác nổi, kết hợp cơ khí, điện tử, lập trình điều khiển và năng lượng mặt trời. Hệ thống quản lý năng lượng hai pin A/B, điều khiển bằng ESP32 và định hướng tự động hóa tạo nền tảng cho nghiên cứu tiếp theo.</p><p>Dù cần tiếp tục hoàn thiện và kiểm chứng bằng thử nghiệm, VDR thể hiện khả năng vận dụng kiến thức khoa học vào thực tiễn, đồng thời góp phần thúc đẩy ý thức bảo vệ môi trường nước và phát triển công nghệ xanh.</p></div></section>
+</main>
+<footer class="footer"><div class="container"><div class="footer-grid"><div><h3>VDR</h3><p>Tàu vớt rác thông minh sử dụng năng lượng mặt trời.</p></div><div><h3>Khám phá</h3><p><a href="#thiet-ke">Cấu tạo</a><br><a href="#nang-luong">Năng lượng</a><br><a href="#van-hanh">Nguyên lý hoạt động</a></p></div><div><h3>Thông điệp</h3><p>Kết hợp công nghệ và năng lượng xanh, hướng đến môi trường nước sạch hơn.</p></div></div><div class="footer-bottom"><span>VDR · Dự án khoa học kỹ thuật</span><a href="#top" style="color:var(--yellow);text-decoration:none">Lên đầu trang ↑</a></div></div></footer>
+<script>
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',()=>document.querySelector('.navlinks').classList.remove('open')));
+</script>
+</body></html>
